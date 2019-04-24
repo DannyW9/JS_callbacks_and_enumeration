@@ -38,8 +38,22 @@ Traveller.prototype.calculateTotalDistanceTravelled = function () {
 };
 
 Traveller.prototype.getUniqueModesOfTransport = function () {
+  let modesOfTransport = []
 
+  this.journeys.forEach(function(journey){
+    if(modesOfTransport.includes(journey.transport) === false) {
+      modesOfTransport.push(journey.transport);
+    };
+  });
+  return modesOfTransport;
 };
+
+// let modesOfTransport = this.journeys.filter(function(journey){
+//   return (modesOfTransport.includes(journey.transport) === false);
+// });
+// return modesOfTransport;
+// };
+
 
 
 module.exports = Traveller;
